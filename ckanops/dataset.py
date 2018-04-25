@@ -25,7 +25,7 @@ def update_dataset(remote, dataset, attributes={}):
         # Remove duplicate metadata fields
         # NOTE: This happened in a few experiments in the extra fields
         unique_extras = set(str(e) for e in dataset['extras'])
-        print 'unique_extras' + unique_extras
+        print 'unique_extras', unique_extras
         dataset['extras'] = [eval(e) for e in unique_extras]
 
         unique_groups = set(str(e) for e in dataset['groups'])

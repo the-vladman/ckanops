@@ -6,7 +6,7 @@ log = logging.getLogger(__name__)
 
 
 def dcat_to_ckan(dcat_dict):
-
+    print 'dcat_dict', dcat_dict
     package_dict = {}
 
     package_dict['title'] = dcat_dict.get('title')
