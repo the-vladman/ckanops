@@ -36,8 +36,8 @@ def dcat_to_ckan(dcat_dict):
     dcat_publisher = dcat_dict.get('publisher')
     dcat_responsible = dcat_dict.get('responsible')
 
-    print dcat_publisher
-    print dcat_responsible
+    log.info('dcat_publisher==== %s', dcat_publisher)
+    log.info('dcat_responsible==== %s', dcat_responsible)
     if isinstance(dcat_publisher, basestring):
         package_dict['owner_org'] = munge.munge_name(dcat_publisher)
         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher})
