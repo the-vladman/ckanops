@@ -34,6 +34,10 @@ def dcat_to_ckan(dcat_dict):
     package_dict['extras'].append({'key': 'guid', 'value': dcat_dict.get('identifier')})
 
     dcat_publisher = dcat_dict.get('publisher')
+    dcat_responsible = dcat_dict.get('responsible')
+
+    print dcat_publisher
+    print dcat_responsible
     if isinstance(dcat_publisher, basestring):
         package_dict['owner_org'] = munge.munge_name(dcat_publisher)
         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher})
@@ -169,4 +173,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
