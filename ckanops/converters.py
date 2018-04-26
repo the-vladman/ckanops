@@ -35,7 +35,6 @@ def dcat_to_ckan(dcat_dict):
 
     dcat_publisher = dcat_dict.get('publisher')
     dcat_responsible = dcat_dict.get('responsible')
-    log.info('dcat_publisher==== %s', dcat_publisher)
     log.info('dcat_responsible==== %s', dcat_responsible)
     # OWNER ORG
     package_dict['owner_org'] = munge.munge_name(dcat_publisher.get('name'))
@@ -135,10 +134,10 @@ def ckan_to_dcat(package_dict):
         elif extra['key'] == 'language':
             dcat_dict['language'] = extra['value'].split(',')
 
-        elif extra['key'] == 'dcat_publisher_name':
+        elif extra['key'] == 'dcat_responsible_name':
             dcat_dict['publisher']['name'] = extra['value']
 
-        elif extra['key'] == 'dcat_publisher_email':
+        elif extra['key'] == 'dcat_responsible_email':
             dcat_dict['publisher']['mbox'] = extra['value']
 
         elif extra['key'] == 'guid':
